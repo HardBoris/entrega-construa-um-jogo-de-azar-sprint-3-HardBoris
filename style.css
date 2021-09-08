@@ -23,7 +23,7 @@ body {
     align-items: center;
 }
 
-#dadoA, #dadoB {
+#dadoA, #dadoB, #dadoC {
     width: 90px;
     height: 90px;
     margin: auto;
@@ -33,7 +33,7 @@ body {
     grid-template-rows: 30px 30px 30px;
 }
 
-.puntoA, .puntoB {
+.puntoA, .puntoB, .puntoC {
     width: 25px;
     height: 25px;
     margin: auto;
