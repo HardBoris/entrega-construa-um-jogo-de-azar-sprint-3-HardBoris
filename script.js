@@ -73,12 +73,11 @@ const pC7 = [puntoC1, puntoC3, puntoC4, puntoC5, puntoC6, puntoC7, puntoC9];
 const pC8 = [puntoC1, puntoC2, puntoC3, puntoC4, puntoC6, puntoC7, puntoC8, puntoC9];
 const pC9 = [puntoC1, puntoC2, puntoC3, puntoC4, puntoC5, puntoC6, puntoC7, puntoC8, puntoC9];
 
-const prueba = [pA1, pA2, pA3, pA4, pA5, pA6, pA7, pA8, pA9]
 
 function resetDots(array) {
     for (let i = 0; i < array.length; i++) {
         array[i].style.backgroundColor = "ivory";
-        // clearInterval(luva)
+        
     }
 }
 
@@ -213,7 +212,7 @@ function rolaC() {
 
 const rodar = document.getElementById("rolar");
 rodar.addEventListener("click", function () {
-    
+    letrero.innerText = ""
     luva = setInterval(function(){
         counter++
         rolaA()
