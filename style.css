@@ -3,6 +3,11 @@ body {
     font-size: 16px;
 }
 
+header {
+    width: auto;
+    height: 15vh;
+}
+
 #mesa {
     width: 320px;
     height: 200px;

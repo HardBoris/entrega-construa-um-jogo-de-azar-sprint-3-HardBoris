@@ -1,6 +1,13 @@
 let dadoA = 0;
 let dadoB = 0;
-let dadoC = 0
+let dadoC = 0;
+let counter = 0;
+
+const letrero = document.createElement("h2");
+const anuncio = document.getElementById("cabecera");
+anuncio.appendChild(letrero)
+
+
 
 const puntosA = document.getElementsByClassName("puntoA");
 const puntosB = document.getElementsByClassName("puntoB");
@@ -80,7 +87,8 @@ function pintaPunto(array) {
 }
 
 function rolaA() {
-    dadoA = (Math.floor(Math.random()*(Math.floor(Math.random()*10))));
+    resetDots(puntosA);
+    dadoA = (Math.floor(Math.random()*10));
     
     switch (dadoA) {
         case 1:
@@ -118,7 +126,8 @@ function rolaA() {
 }
 
 function rolaB() {
-    dadoB = (Math.floor(Math.random()*(Math.floor(Math.random()*10))));
+    resetDots(puntosB);
+    dadoB = (Math.floor(Math.random()*10));
     
     switch (dadoB) {
         case 1:
@@ -156,7 +165,8 @@ function rolaB() {
 }
 
 function rolaC() {
-    dadoC = (Math.floor(Math.random()*(Math.floor(Math.random()*10))));
+    resetDots(puntosC);
+    dadoC = (Math.floor(Math.random()*10));
     
     switch (dadoC) {
         case 1:
@@ -199,8 +209,13 @@ rodar.addEventListener("click", function () {
     rolaA();
     rolaB();
     rolaC();
-    const lanzamiento = [dadoA, dadoB];
-    // return lanzamiento;
-    console.log(lanzamiento);
+    counter++
+        if (dadoA === dadoB && dadoA === dadoC) {
+            letrero.innerText = "Você venceu!"
+            counter = 0
+        } else {
+            letrero.innerHTML = "Você perdeu!<br> Tente de novo"
+            
+        }
     
 })
