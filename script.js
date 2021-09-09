@@ -2,7 +2,7 @@ let dadoA = 0;
 let dadoB = 0;
 let dadoC = 0;
 let counter = 0;
-
+let luva
 const letrero = document.createElement("h2");
 const anuncio = document.getElementById("cabecera");
 anuncio.appendChild(letrero)
@@ -73,10 +73,12 @@ const pC7 = [puntoC1, puntoC3, puntoC4, puntoC5, puntoC6, puntoC7, puntoC9];
 const pC8 = [puntoC1, puntoC2, puntoC3, puntoC4, puntoC6, puntoC7, puntoC8, puntoC9];
 const pC9 = [puntoC1, puntoC2, puntoC3, puntoC4, puntoC5, puntoC6, puntoC7, puntoC8, puntoC9];
 
+const prueba = [pA1, pA2, pA3, pA4, pA5, pA6, pA7, pA8, pA9]
+
 function resetDots(array) {
     for (let i = 0; i < array.length; i++) {
         array[i].style.backgroundColor = "ivory";
-        
+        // clearInterval(luva)
     }
 }
 
@@ -86,8 +88,11 @@ function pintaPunto(array) {
     }
 }
 
+
+
 function rolaA() {
     resetDots(puntosA);
+    
     dadoA = (Math.floor(Math.random()*10));
     
     switch (dadoA) {
@@ -122,6 +127,7 @@ function rolaA() {
             resetDots(puntosA);
             break;
     }
+    
     return dadoA;
 }
 
@@ -203,19 +209,28 @@ function rolaC() {
     return dadoC;
 }
 
+ 
+
 const rodar = document.getElementById("rolar");
 rodar.addEventListener("click", function () {
     
-    rolaA();
-    rolaB();
-    rolaC();
-    counter++
-        if (dadoA === dadoB && dadoA === dadoC) {
-            letrero.innerText = "Você venceu!"
-            counter = 0
-        } else {
-            letrero.innerHTML = "Você perdeu!<br> Tente de novo"
+    luva = setInterval(function(){
+        counter++
+        rolaA()
+        rolaB()
+        rolaC()
+        if (counter > 30) {
             
+            if (dadoA === dadoB && dadoA === dadoC) {
+                letrero.innerText = "Você venceu!"
+            } else {
+                letrero.innerHTML = "Você perdeu!<br> Tente de novo"
+            }
+            counter = 0;
+            clearInterval(luva)
         }
-    
+        
+    }, 30)
+
 })
+

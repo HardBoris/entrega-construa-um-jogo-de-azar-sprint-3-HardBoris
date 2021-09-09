@@ -53,3 +53,24 @@ button {
     border-radius: 5px;
     font-size: 1.2em;
 }
+
+/* .animation {
+    animation-name: blinking;
+    animation-duration: 0.5s;
+    animation-iteration-count: 10;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes blinking {
+    0% {
+        background-color: ivory;
+    }
+
+    50% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: ivory;
+    }
+} */
